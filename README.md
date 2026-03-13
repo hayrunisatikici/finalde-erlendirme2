@@ -1,10 +1,13 @@
 Akıllı Sistem Günlük (Log) Analiz ve Yönetim Platformu
+
 Bu proje; sistemler tarafından üretilen karmaşık, düzensiz ve okunması zor ham log verilerini anlamlı bilgilere dönüştüren bir veri işleme mimarisidir. Yazılım, bilgisayar bilimlerinin temel taşlarından olan "Dinamik Bellek Yönetimi" ve "Bağlı Liste (Linked List)" prensiplerini kullanarak yüksek verimlilikte bir veri zinciri oluşturur.
 
 Projenin Temel Misyonu
+
 Modern işletim sistemleri saniyeler içinde binlerce satır log üretir. Bu projenin temel amacı, bu devasa veri akışı içinden sadece mesaj içeriğini ayıklamak, veriyi standart bir zaman formatına sokmak ve bu bilgileri sistem kaynaklarını (RAM) yormadan esnek bir şekilde hafızada muhafaza etmektir.
 
 Mimari ve Çalışma Prensipleri
+
 1. Dinamik Veri Yapılandırması
 Geleneksel yöntemlerde veriler sabit boyutlu dizilerde tutulur, bu da hafıza israfına yol açar. Bu projede ise "Bağlı Liste" mimarisi kullanılmıştır.
 Her bir kayıt, bir önceki kayda görünmez bir bağ ile tutunur.
