@@ -30,16 +30,25 @@ Yazılımın en kritik özelliklerinden biri "Hafıza Sızıntısı (Memory Leak
 İşlem Akış Şeması
 
 Giriş: Ham log dizisinin sisteme beslenmesi.
+
 Analiz: Mesajın başındaki gereksiz karakterlerin kırpılması.
+
 Yapılandırma: Mesajın "Kayıt Düğümü" adı verilen dijital zarfa yerleştirilmesi.
+
 Zamanlama: O anki takvim ve saat bilgisinin zarfa mühürlenmesi.
+
 Bağlama: Yeni zarfın, mevcut veri zincirinin sonuna eklenmesi.
+
 Raporlama: Tüm zincirin temiz ve sıralı bir tablo halinde kullanıcıya sunulması.
+
 İmha: Görev bitiminde kullanılan tüm dijital kaynakların serbest bırakılması.
 
 Teknik Avantajlar ve Verimlilik
 
 Düşük Kaynak Tüketimi: Sadece aktif kayıtlar için hafıza harcar.
+
 Hız: Veri ekleme işlemleri, listelerin dinamik yapısı sayesinde anlık gerçekleşir.
+
 Esneklik: Kayıt sayısı önceden bilinmek zorunda değildir; 5 kayıt da işleyebilir, 50.000 kayıt da.
+
 Hata Ayıklama Dostu: Formatlanmış çıktı sayesinde sistem hataları kolayca teşhis edilir.
