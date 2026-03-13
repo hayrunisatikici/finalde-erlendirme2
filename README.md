@@ -9,21 +9,26 @@ Modern işletim sistemleri saniyeler içinde binlerce satır log üretir. Bu pro
 Mimari ve Çalışma Prensipleri
 
 1. Dinamik Veri Yapılandırması
+   
 Geleneksel yöntemlerde veriler sabit boyutlu dizilerde tutulur, bu da hafıza israfına yol açar. Bu projede ise "Bağlı Liste" mimarisi kullanılmıştır.
 Her bir kayıt, bir önceki kayda görünmez bir bağ ile tutunur.
 Yeni bir hata veya mesaj geldiğinde hafızada sadece o mesaj kadar yer açılır.
 Bu yöntem, sistemin ölçeklenebilir olmasını sağlar.
 
 2. Ham Veri İşleme ve Temizleme Modülü
+   
 Sistem, girdi olarak aldığı ham metin yığınlarını bir süzgeçten geçirir. Örneğin; standart bir sistem günlüğünün başında yer alan eski tarih bilgileri (Mart 10, 08:30 gibi) otomatik olarak tespit edilir ve mesajın özünden ayrıştırılır. Böylece sadece kullanıcıyı ilgilendiren "Mesaj İçeriği" korunur.
 
 3. Gerçek Zamanlı (Real-Time) Damgalama
+
 Ayıklanan mesajlar, o anki sistem saatiyle yeniden eşleştirilir. Proje; saniye hassasiyetinde güncel zamanı yakalar ve bunu insan odaklı bir formatta (Örn: "13 Mart 2026, Cuma - 17:30:45") kayda işler. Bu, geçmişe dönük analizlerde yüksek doğruluk sağlar.
 
 4. Güvenli Bellek Tahliyesi
+   
 Yazılımın en kritik özelliklerinden biri "Hafıza Sızıntısı (Memory Leak)" korumasıdır. İşlem tamamlandığında, oluşturulan tüm veri zinciri tek tek taranarak bilgisayarın RAM'inden temizlenir. Bu, uzun süreli çalışan sistemlerde şişme ve donma problemlerini önler.
 
 İşlem Akış Şeması
+
 Giriş: Ham log dizisinin sisteme beslenmesi.
 Analiz: Mesajın başındaki gereksiz karakterlerin kırpılması.
 Yapılandırma: Mesajın "Kayıt Düğümü" adı verilen dijital zarfa yerleştirilmesi.
@@ -33,6 +38,7 @@ Raporlama: Tüm zincirin temiz ve sıralı bir tablo halinde kullanıcıya sunul
 İmha: Görev bitiminde kullanılan tüm dijital kaynakların serbest bırakılması.
 
 Teknik Avantajlar ve Verimlilik
+
 Düşük Kaynak Tüketimi: Sadece aktif kayıtlar için hafıza harcar.
 Hız: Veri ekleme işlemleri, listelerin dinamik yapısı sayesinde anlık gerçekleşir.
 Esneklik: Kayıt sayısı önceden bilinmek zorunda değildir; 5 kayıt da işleyebilir, 50.000 kayıt da.
